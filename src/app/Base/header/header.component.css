@@ -1,0 +1,39 @@
+.header {
+  position: sticky;
+  top: 0;
+  background: #fff;   
+  border-bottom: 1px solid #e5e7eb;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px; 
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #021226;
+}
+
+.brand-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #2b6cb0 0%, #2f855a 100%);
+}
