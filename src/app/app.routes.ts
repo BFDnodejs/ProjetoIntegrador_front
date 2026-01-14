@@ -7,22 +7,23 @@ import { ContractComponent } from './contract/contract.component';
 import { HeaderComponent } from './Base/header/header.component';
 import { FooterComponent } from './Base/footer/footer.component';
 import { ServiceCompanyComponent } from './service-company/service-company.component';
-
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent }, 
+  { path: '', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'companies', component: CompaniesComponent },
   { path: 'companyRegitration', component: CompanyRegistrationComponent },
-  { path: 'contract' , component: ContractComponent},
-  { path: 'header', component: HeaderComponent},
-  { path: 'footer', component: FooterComponent},
+  { path: 'contract', component: ContractComponent },
+  { path: 'header', component: HeaderComponent },
+  { path: 'footer', component: FooterComponent },
   { path: 'service-company', component: ServiceCompanyComponent },
+  { path: 'login', component: LoginComponent },
   { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

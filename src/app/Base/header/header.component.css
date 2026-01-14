@@ -1,39 +1,97 @@
-.header {
-  position: sticky;
-  top: 0;
-  background: #fff;   
-  border-bottom: 1px solid #e5e7eb;
-  z-index: 100;
-}
-
-.header-inner {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 12px 20px;
+.app-header {
+  height: 64px;
+  background-color: #f5f6f8;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-}
-.brand-logo {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px; 
-  object-fit: cover;
-  margin-right: 10px;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
-.brand {
+/* LADO ESQUERDO */
+.header-left {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: 600;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: #021226;
 }
 
-.brand-mark {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-  background: linear-gradient(135deg, #2b6cb0 0%, #2f855a 100%);
+/* esconde o checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* botão do menu */
+.menu-button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+/* menu fechado por padrão */
+.menu {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  background: rgb(218, 218, 218);
+
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* quando checkbox estiver marcado → mostra menu */
+#menu-toggle:checked + .menu-button + .menu {
+  display: flex;
+}
+
+.menu-button {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #262626;
+  border: none;
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 32px;
+  width: auto;
+}
+
+.company-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.company-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+}
+
+.company-subtitle {
+  font-size: 11px;
+  color: #666;
+}
+
+/* LADO DIREITO */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+}
+
+@media (max-width: 600px) {
+  .company-text {
+    display: none;
+  }
 }

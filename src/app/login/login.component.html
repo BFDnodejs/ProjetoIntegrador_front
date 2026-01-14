@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+
+  <body>
+    <main>
+      <section class="login-box" aria-labelledby="login-title">
+        <header>
+          <h1 id="login-title">Entrar</h1>
+          <p>Acesse sua conta</p>
+        </header>
+
+        <form method="post" action="/login">
+          <fieldset>
+            <legend style="display: none">Formulário de Login</legend>
+
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="seu@email.com"
+              required
+            />
+
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" required />
+
+            <button type="submit">Entrar</button>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
