@@ -1,31 +1,42 @@
 <header class="app-header">
-  <div class="header-left">
-    <input type="checkbox" id="menu-toggle" />
-
-    <!-- botão -->
-    <label for="menu-toggle" class="menu-button">
-      <i class="fa fa-bars" aria-hidden="true"></i>
-    </label>
-
-    <!-- menu -->
-    <nav class="menu">
-      <a href="#">Início</a>
-      <a href="#">Serviços</a>
-      <a href="#">Contato</a>
-    </nav>
-
-    <div class="logo-area">
-      <img src="logo.png" alt="Meta RH" class="logo" />
-      <div class="company-text">
-        <span class="company-name">Meta RH</span>
-        <span class="company-subtitle">Talento & Performance</span>
+  <div class="header-inner">
+    <!-- Esquerda: logo -->
+    <div class="header-left">
+      <div class="logo-area">
+        <img src="logo.png" alt="Meta RH" class="logo" />
+        <div class="company-text">
+          <span class="company-name">Meta RH</span>
+          <span class="company-subtitle">Taleto & performance</span>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="header-right">
-    <div class="user-avatar">
-      <i class="fa-solid fa-user"></i>
+    <!-- Centro: menu desktop -->
+    <nav class="menu menu-desktop" style="margin-right: 12%;">
+      <a routerLink="/servicos" routerLinkActive="active">serviços</a>
+      <a routerLink="/contratos" routerLinkActive="active">Contratos</a>
+      <a routerLink="/empresas" routerLinkActive="active">Empresas</a>
+      <a routerLink="/servicos" routerLinkActive="active">serviços</a>
+    </nav>
+
+    <!-- Direita: avatar + hamburger (mobile) -->
+    <div class="header-right">
+      <!-- Toggle do menu no mobile -->
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+      <label for="menu-toggle" class="menu-button" aria-label="Abrir menu">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </label>
+
+      <div class="user-avatar" aria-label="Usuário">
+       <i class="fa-solid fa-user"></i>
+      </div>
+
+      <!-- Menu mobile -->
+      <nav class="menu menu-mobile">
+        <a routerLink="/servicos">serviços</a>
+        <a routerLink="/contratos">Contratos</a>
+        <a routerLink="/empresas">Empresas</a>
+      </nav>
     </div>
   </div>
 </header>

@@ -1,11 +1,13 @@
-export interface User {
-  id?: number;
+export interface AuthRequest {
   email: string;
-  password?: string; 
-  role: string;     
+  password: string;
 }
 
-export interface LoginResponse {
-  user: User;
+export interface AuthResponse {
   token: string;
+  user: {
+    id: number;
+    email: string;
+    role: 'EMPLOYEE';
+  };
 }

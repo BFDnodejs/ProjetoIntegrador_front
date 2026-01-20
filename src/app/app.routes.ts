@@ -8,6 +8,7 @@ import { HeaderComponent } from './Base/header/header.component';
 import { FooterComponent } from './Base/footer/footer.component';
 import { ServiceCompanyComponent } from './service-company/service-company.component';
 import { LoginComponent } from './login/login.component';
+import { SignUpLoginComponent } from './sign-up-login/sign-up-login.component';
 
 export const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -19,6 +20,7 @@ export const routes: Routes = [
   { path: 'footer', component: FooterComponent },
   { path: 'service-company', component: ServiceCompanyComponent },
   { path: 'login', component: LoginComponent },
+  {path: 'sign-up-login', component: SignUpLoginComponent},
   { path: '**', redirectTo: '' },
 ];
 
