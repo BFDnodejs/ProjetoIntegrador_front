@@ -1,39 +1,25 @@
 import { Injectable } from '@angular/core';
-import { tap } from 'rxjs';
-import { ApiService } from './api.service';
+import api from './Api';
 
-interface Credentials {
-  email: string;
-  password: string;
-}
-
-interface UserView {
-  id: number;
-  email: string;
-  role: 'EMPLOYEE';
-}
-
-interface AuthResponse {
-  token: string;
-  user: UserView;
-}
-
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthService {
-  constructor(private api: ApiService) {}
 
-  register(data: Credentials) {
-    // se seu register NÃO retorna token, troque o tipo de retorno
-    return this.api.post<UserView>('/register', data);
-  }
-
-  login(data: Credentials) {
-    return this.api.post<AuthResponse>('/login', data).pipe(
-      tap((res) => {
-        localStorage.setItem('token', res.token);
-        localStorage.setItem('user', JSON.stringify(res.user));
-      })
-    );
+  async login(credentials: { email: string; password: any }) {
+    try {
+      const response = await api.post('/users/login', credentials);
+      
+      // Salva o token se o login for bem sucedido
+      if (response.data.token) {
+        localStorage.setItem('token', response.data.token);
+        localStorage.setItem('user', JSON.stringify(response.data.user));
+      }
+      
+      return response.data;
+    } catch (error: any) {
+      throw error.response?.data || { message: 'Erro ao conectar com o servidor' };
+    }
   }
 
   logout() {
