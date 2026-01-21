@@ -1,19 +1,16 @@
-
 <div class="page-login">
-
   <main class="login-container">
     <div style="margin-bottom: 18px; font-weight: 800; letter-spacing: 2px; color: #ff8a00;">
       META RH
     </div>
 
     <section class="login-box">
-
       <header class="login-header">
         <h1>Cadastrar</h1>
         <p>Crie sua conta para continuar</p>
       </header>
 
-      <form class="login-form" action="/login" method="POST">
+      <form class="login-form" (submit)="onRegister($event)">
         <fieldset>
           <legend style="display:none;">Login</legend>
 
@@ -22,6 +19,7 @@
             type="email"
             id="email"
             name="email"
+            [(ngModel)]="userData.email"
             placeholder="seu@email.com"
             required
             autocomplete="email"
@@ -32,19 +30,31 @@
             type="password"
             id="password"
             name="password"
+            [(ngModel)]="userData.password"
             placeholder="••••••••"
             required
-            autocomplete="current-password"
+            autocomplete="new-password"
           />
 
-          <button type="submit" class="btn-submit">
-            Cadastrar
+          
+          <p *ngIf="errorMessage" style="color: #ff4444; font-size: 0.85rem; margin-top: 10px;">
+            {{ errorMessage }}
+          </p>
+          <p *ngIf="successMessage" style="color: #00c851; font-size: 0.85rem; margin-top: 10px;">
+            {{ successMessage }}
+          </p>
+
+          <button type="submit" class="btn-submit" [disabled]="loading">
+            {{ loading ? 'Processando...' : 'Cadastrar' }}
           </button>
         </fieldset>
       </form>
 
+      <div style="margin-top: 15px; text-align: center;">
+        <a routerLink="/login" style="font-size: 0.8rem; color: #666; text-decoration: none;">
+          Já tem uma conta? Faça login
+        </a>
+      </div>
     </section>
-
   </main>
-
 </div>

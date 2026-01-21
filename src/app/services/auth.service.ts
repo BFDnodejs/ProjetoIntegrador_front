@@ -6,11 +6,22 @@ import api from './Api';
 })
 export class AuthService {
 
+  async register(userData: { email: string; password: any }) {
+  try {
+
+    const response = await api.post('/users/register', userData);
+    return response.data;
+  } catch (error: any) {
+
+    throw error.response?.data || { message: 'Erro ao processar cadastro' };
+  }
+}
+
   async login(credentials: { email: string; password: any }) {
     try {
       const response = await api.post('/users/login', credentials);
       
-      // Salva o token se o login for bem sucedido
+
       if (response.data.token) {
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('user', JSON.stringify(response.data.user));

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../services/Auth.service';
 import { Router, RouterModule } from '@angular/router';
 
 @Component({
@@ -30,7 +30,7 @@ export class LoginComponent {
     try {
       await this.authService.login(this.loginData);
       console.log('Login realizado com sucesso!');
-      this.router.navigate(['/home']); // Redireciona após o login
+      this.router.navigate(['/home']);
     } catch (err: any) {
       this.errorMessage = err.message || 'Falha ao realizar login.';
     } finally {
