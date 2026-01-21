@@ -13,14 +13,16 @@
       <span class="logo-icon">Meta</span> <strong>RH</strong>
     </div>
 
-    <article class="login-card">
+    <section class="login-box">
       <header class="login-header">
-        <h1 id="login-title" style="color: white;">Entrar</h1>
+        <h1>Entrar</h1>
         <p>Acesse sua conta para continuar</p>
       </header>
 
       <form class="login-form" action="/login" method="POST">
-        <div class="input-group">
+        <fieldset>
+          <legend style="display: none">Login</legend>
+          
           <label for="email">E-mail</label>
           <input 
             type="email" 
@@ -30,9 +32,7 @@
             required 
             autocomplete="email"
           />
-        </div>
 
-        <div class="input-group">
           <label for="password">Senha</label>
           <input 
             type="password" 
@@ -42,17 +42,15 @@
             required 
             autocomplete="current-password"
           />
-        </div>
 
-        <button type="submit" class="btn-submit">Entrar</button>
-        
-        <button type="button" class="btn-secondary">Criar conta</button>
+          <button type="submit" class="btn-submit">Entrar</button>
+        </fieldset>
       </form>
       
       <footer class="login-footer">
         <a href="#">Esqueceu sua senha?</a>
       </footer>
-    </article>
+    </section>
 
   </main>
 </body>

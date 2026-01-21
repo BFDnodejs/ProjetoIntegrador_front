@@ -1,55 +1,63 @@
 <div class="clientes-container">
 
-  <h2 class="titulo">Listas de clientes</h2>
+  <h2 class="titulo">Lista de Clientes</h2>
 
-  <!-- Busca -->
-  <div class="search-box">
-    <input type="text" placeholder="Buscar cliente..." />
-    <span class="icon"></span>
+  <div class="toolbar">
+    
+    <div class="search-wrapper">
+      <div class="search-box">
+        <input type="text" placeholder="Buscar por nome, código ou CNPJ..." />
+      </div>
+
+      <div class="filtros">
+        <label><input type="checkbox" /> A - Z</label>
+        <label><input type="checkbox" /> Cód. Crescente</label>
+      </div>
+    </div>
+
+    <button class="btn-cadastrar" routerLink="/companyRegitration">
+      + Nova Empresa
+    </button>
   </div>
 
-  <!-- Filtros -->
-  <div class="filtros">
-    <label><input type="checkbox" /> Ordem alfabética A - Z</label>
-    <label><input type="checkbox" /> Ordem crescente Código cliente</label>
+  <div class="table-responsive">
+    <table class="clientes-table">
+      <thead>
+        <tr>
+          <th>Nome Fantasia</th>
+          <th>Cód. Cliente</th>
+          <th>CNPJ</th>
+          <th>Razão Social</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><strong>Cliente Alfa</strong></td>
+          <td>00124</td>
+          <td>12.345.678/0001-90</td>
+          <td>Alfa Serviços LTDA</td>
+        </tr>
+        <tr>
+          <td><strong>Beta Consultoria</strong></td>
+          <td>00751</td>
+          <td>98.765.432/0001-22</td>
+          <td>Beta Gestão Empresarial ME</td>
+        </tr>
+        <tr>
+          <td><strong>Gamma Tech</strong></td>
+          <td>00390</td>
+          <td>45.678.901/0001-33</td>
+          <td>Gamma Tecnologia LTDA</td>
+        </tr>
+        <tr>
+          <td><strong>Delta Logistics</strong></td>
+          <td>00412</td>
+          <td>33.111.222/0001-55</td>
+          <td>Delta Logística e Transportes</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-
-  <!-- Botão cadastrar -->
-  <div class="btn-cadastrar-container">
-    <button class="btn-cadastrar"  routerLink="/companyRegitration"  >cadastrar</button>
-  </div>
-
-  <!-- Tabela -->
-  <table class="clientes-table">
-    <thead>
-      <tr>
-        <th>Nome Fantasia</th>
-        <th>Código Cliente</th>
-        <th>CNPJ</th>
-        <th>Razão Social</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr>
-        <td>Cliente Alfa</td>
-        <td>00124</td>
-        <td>12.345.678/0001-90</td>
-        <td>Alfa Serviços LTDA</td>
-      </tr>
-      <tr>
-        <td>Beta Consultoria</td>
-        <td>00751</td>
-        <td>98.765.432/0001-22</td>
-        <td>Beta Gestão Empresarial ME</td>
-      </tr>
-      <tr>
-        <td>Gamma Tech</td>
-        <td>00390</td>
-        <td>45.678.901/0001-33</td>
-        <td>Gamma Tecnologia LTDA</td>
-      </tr>
-    </tbody>
-  </table>
 
 </div>

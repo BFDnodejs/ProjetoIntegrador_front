@@ -1,1 +1,68 @@
-<p>contract works!</p>
+<div class="clientes-container">
+
+  <h2 class="titulo">Lista de Contratos</h2>
+
+  <div class="toolbar">
+    
+    <div class="search-wrapper">
+      <div class="search-box">
+        <input type="text" placeholder="Buscar por nome, ID, código ou CNPJ..." />
+      </div>
+
+      <div class="filtros">
+        <label><input type="checkbox" /> A - Z</label>
+        <label><input type="checkbox" /> Cód. Crescente</label>
+      </div>
+    </div>
+
+    <button class="btn-cadastrar" routerLink="/companyRegitration">
+      + Novo Contrato
+    </button>
+  </div>
+
+  <div class="table-responsive">
+    <table class="clientes-table">
+      <thead>
+        <tr>
+          <th>Nome Fantasia</th>
+          <th>Razão Social</th>
+          <th>CNPJ</th>
+          <th>Cód. Contrato</th>
+          <th>Preço Unitário</th>
+          <th>Data de Início</th>
+          <th>Data de Vencimento</th>
+          <th>Status</th>
+          <th>Observação</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><strong>Cliente Alfa</strong></td>
+          <td>Alfa Serviços LTDA</td>   
+          <td>12.345.678/0001-90</td>
+          <td>00124</td>
+        </tr>
+        <tr>
+          <td><strong>Beta Consultoria</strong></td>
+          <td>Beta Gestão Empresarial ME</td>
+          <td>98.765.432/0001-22</td>
+          <td>00751</td>
+        </tr>
+        <tr>
+          <td><strong>Gamma Tech</strong></td>
+          <td>Gamma Tecnologia LTDA</td>
+          <td>45.678.901/0001-33</td>
+          <td>00390</td>
+        </tr>
+        <tr>
+          <td><strong>Delta Logistics</strong></td>
+          <td>Delta Logística e Transportes</td>
+          <td>33.111.222/0001-55</td>
+          <td>00412</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

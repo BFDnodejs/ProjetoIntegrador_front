@@ -1,84 +1,124 @@
-
-
 <div class="layout">
-  <!-- Sidebar -->
+  
   <aside class="sidebar">
-    <div class="sidebar-title">Navegação</div>
+    <div class="sidebar-header">
+      <h3 class="sidebar-title">Painel</h3>
+    </div>
+    
     <nav class="nav">
-      <a href="#" class="active">Visão geral</a>
-      <a routerLink="/companies">Empresas cadastradas</a>
-      <a  routerLink="/contract">Contratos</a>
-      <a routerLink="/service-company">Serviços</a>
+      <a routerLink="/home" routerLinkActive="active" class="nav-item active">
+        <i class="fa-solid fa-chart-pie"></i> Visão Geral
+      </a>
+      <a routerLink="/companies" routerLinkActive="active" class="nav-item">
+        <i class="fa-solid fa-building"></i> Empresas
+      </a>
+      <a routerLink="/contract" routerLinkActive="active" class="nav-item">
+        <i class="fa-solid fa-file-contract"></i> Contratos
+      </a>
+      <a routerLink="/service-company" routerLinkActive="active" class="nav-item">
+        <i class="fa-solid fa-tags"></i> Serviços
+      </a>
     </nav>
   </aside>
 
-  <!-- Main content -->
   <main class="main">
-    <section class="page-header">
-      <div>
-        <div class="page-title">Organização interna</div>
-        <div class="page-subtitle">.</div>
+    
+    <header class="page-header">
+      <div class="header-content">
+        <h1 class="page-title">Organização Interna</h1>
+        <p class="page-subtitle">Visão geral de métricas e contratos recentes</p>
       </div>
-      <div>
-        <button class="btn">Exportar</button>
-        <button class="btn btn-primary">Adicionar item</button>
+      <div class="header-actions">
+        <button class="btn btn-outline">Exportar</button>
+        <button class="btn btn-primary">+ Novo Item</button>
       </div>
-    </section>
-    <!-- KPIs -->
+    </header>
+
     <section class="kpis">
-      <div class="card">
-        <div class="card-title">Vigente</div>
-        <div class="metric">Contratos</div>
-        <div class="trend">50</div>
+      <div class="card kpi-card">
+        <div class="card-icon blue"><i class="fa-solid fa-file-signature"></i></div>
+        <div class="card-info">
+          <span class="card-title">Contratos Vigentes</span>
+          <div class="metric">50</div>
+        </div>
       </div>
 
-      <div class="card">
-        <div class="card-title">Rescindido</div>
-        <div class="metric">Contratos </div>
-        <div class="trend">20</div>
+      <div class="card kpi-card">
+        <div class="card-icon red"><i class="fa-solid fa-file-circle-xmark"></i></div>
+        <div class="card-info">
+          <span class="card-title">Rescindidos</span>
+          <div class="metric">20</div>
+        </div>
       </div>
 
-      <div class="card">
-        <div class="card-title">Total</div>
-        <div class="metric">Clientes</div>
-        <div class="trend">15</div>
+      <div class="card kpi-card">
+        <div class="card-icon green"><i class="fa-solid fa-users"></i></div>
+        <div class="card-info">
+          <span class="card-title">Total de Clientes</span>
+          <div class="metric">15</div>
+        </div>
       </div>
-      
     </section>
-  </main>
-    <div class="table-wrap">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Empresa</th>
-            <th>CNPJ</th>
-            <th>Contrato</th>
-            <th>Serviço</th>
-            <th class="right">Valor</th>
-            <th>Status</th>
-            <th class="right">Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <div class="company">
-                <div class="avatar">E</div>
-                <div>
-                  <div class="company__name">ENGEMOLDE</div>
-                  <div class="company__type">Engenharia</div>
+
+    <section class="table-container">
+      <h3 class="section-title">Contratos Recentes</h3>
+      
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Empresa</th>
+              <th>CNPJ</th>
+              <th>Contrato</th>
+              <th>Serviço</th>
+              <th>Valor</th>
+              <th class="text-center">Status</th>
+              <th class="text-center">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="company-info">
+                  <div class="company-avatar">E</div>
+                  <div class="company-details">
+                    <span class="company-name">ENGEMOLDE</span>
+                    <span class="company-type">Engenharia</span>
+                  </div>
                 </div>
-              </div>
-            </td>
-            <td>27.037.167/0001-83</td>
-            <td>6102-AIE-03</td>
-            <td>Agente de Integração de Estágio</td>
-            <td class="right">R$ 90,00</td>
-            <td><span class="badge badge--ok">Vigente</span></td>
-            <td class="right"><button class="mini-btn" type="button">Detalhes</button></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>  
-
-
+              </td>
+              <td>27.037.167/0001-83</td>
+              <td><span class="code-badge">6102-AIE-03</span></td>
+              <td>Agente de Integração</td>
+              <td>R$ 90,00</td>
+              <td class="text-center"><span class="badge badge-success">Vigente</span></td>
+              <td class="text-center">
+                <button class="btn-icon"><i class="fa-solid fa-eye"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="company-info">
+                  <div class="company-avatar blue">M</div>
+                  <div class="company-details">
+                    <span class="company-name">Meta RH</span>
+                    <span class="company-type">Consultoria</span>
+                  </div>
+                </div>
+              </td>
+              <td>19.674.454/0001-76</td>
+              <td><span class="code-badge">5501-RHP-01</span></td>
+              <td>Combo Platinum</td>
+              <td>R$ 159,90</td>
+              <td class="text-center"><span class="badge badge-warning">Pendente</span></td>
+              <td class="text-center">
+                <button class="btn-icon"><i class="fa-solid fa-eye"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  
+  </main>
+</div>
