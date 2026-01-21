@@ -1,40 +1,50 @@
-<p>sign-up-login works!</p>
-<!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cadastrar</title>
-  </head>
 
-  <body>
-    <main>
-      <section class="login-box" aria-labelledby="login-title">
-        <header>
-          <h1 id="login-title">Entrar</h1>
-          <p>Cadastre sua conta</p>
-        </header>
+<div class="page-login">
 
-        <form method="post" action="/login">
-          <fieldset>
-            <legend style="display: none">Formulário de Login</legend>
+  <main class="login-container">
+    <div style="margin-bottom: 18px; font-weight: 800; letter-spacing: 2px; color: #ff8a00;">
+      META RH
+    </div>
 
-            <label for="email">E-mail</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="seu@email.com"
-              required
-            />
+    <section class="login-box">
 
-            <label for="password">Senha</label>
-            <input type="password" id="password" name="password" required />
+      <header class="login-header">
+        <h1>Cadastrar</h1>
+        <p>Crie sua conta para continuar</p>
+      </header>
 
-            <button type="submit">Cadastrar</button>
-          </fieldset>
-        </form>
-      </section>
-    </main>
-  </body>
-</html>
+      <form class="login-form" action="/login" method="POST">
+        <fieldset>
+          <legend style="display:none;">Login</legend>
+
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="seu@email.com"
+            required
+            autocomplete="email"
+          />
+
+          <label for="password">Senha</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="••••••••"
+            required
+            autocomplete="current-password"
+          />
+
+          <button type="submit" class="btn-submit">
+            Cadastrar
+          </button>
+        </fieldset>
+      </form>
+
+    </section>
+
+  </main>
+
+</div>

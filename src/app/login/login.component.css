@@ -1,120 +1,122 @@
-/* ====== RESET BÁSICO ====== */
-* { box-sizing: border-box; }
+/* ===== RESET BÁSICO (SEGURO) ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-body {
-  margin: 0;
+/* ===== WRAPPER QUE SUBSTITUI O BODY ===== */
+.page-login {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+  overflow: hidden;
+
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: #eaf0ff;
 
-  /* Fundo idêntico ao Sign-Up */
+  /* FUNDO IDÊNTICO AO PRINT */
   background:
     radial-gradient(900px 500px at 15% 20%, rgba(99,102,241,.35) 0%, transparent 60%),
     radial-gradient(800px 500px at 85% 30%, rgba(59,130,246,.25) 0%, transparent 55%),
     radial-gradient(700px 450px at 50% 90%, rgba(16,185,129,.18) 0%, transparent 55%),
     linear-gradient(180deg, #070a12 0%, #0b1022 45%, #060814 100%);
-  
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  overflow: hidden;
 }
 
-/* ====== CONTAINER ====== */
+/* ===== CONTAINER ===== */
 .login-container {
   width: 100%;
   max-width: 430px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
   position: relative;
-  z-index: 10;
+  z-index: 2;
 }
 
-/* ====== LOGO META RH ====== */
-.brand-header {
-  margin-bottom: 30px;
-  font-size: 1.8rem;
-  letter-spacing: 1px;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  z-index: 20;
-}
-
-.logo-icon {
-  background: linear-gradient(90deg, #ff8a00, #e52e71);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-/* ====== LOGIN BOX ====== */
-section.login-box {
-  position: relative;
+/* ===== LOGIN BOX ===== */
+.login-box {
   width: 100%;
   padding: 26px 24px;
   border-radius: 18px;
 
-  /* Glassmorphism */
   background: rgba(255,255,255,.06);
   border: 1px solid rgba(255,255,255,.12);
+
   box-shadow:
     0 20px 55px rgba(0,0,0,.45),
     inset 0 1px 0 rgba(255,255,255,.08);
 
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+
+  position: relative;
 }
 
-/* Efeitos decorativos (Glow) */
-section.login-box::before {
-  content:"";
-  position:absolute;
-  inset: -120px -120px auto auto;
+/* ===== GLOW DECORATIVO (IGUAL AO ORIGINAL) ===== */
+.login-box::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -120px;
+
   width: 260px;
   height: 260px;
-  background: radial-gradient(circle at 30% 30%, rgba(59,130,246,.55), transparent 65%);
+
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(59,130,246,.55),
+    transparent 65%
+  );
+
   filter: blur(12px);
   transform: rotate(12deg);
-  pointer-events:none;
+  pointer-events: none;
   z-index: -1;
 }
 
-section.login-box::after {
-  content:"";
-  position:absolute;
-  inset: auto auto -140px -140px;
+.login-box::after {
+  content: "";
+  position: absolute;
+  bottom: -140px;
+  left: -140px;
+
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle at 65% 55%, rgba(99,102,241,.45), transparent 65%);
+
+  background: radial-gradient(
+    circle at 65% 55%,
+    rgba(99,102,241,.45),
+    transparent 65%
+  );
+
   filter: blur(14px);
   transform: rotate(-10deg);
-  pointer-events:none;
+  pointer-events: none;
   z-index: -1;
 }
 
-/* ====== TIPOGRAFIA ====== */
+/* ===== TIPOGRAFIA ===== */
 .login-header h1 {
   margin: 0 0 6px;
   font-size: 24px;
-  letter-spacing: .2px;
   color: #eaf0ff;
 }
 
 .login-header p {
   margin: 0 0 18px;
-  color: rgba(234,240,255,.72);
   font-size: 14px;
-  line-height: 1.4;
+  color: rgba(234,240,255,.72);
 }
 
-/* ====== FORMULÁRIO ====== */
+/* ===== FORM ===== */
 fieldset {
   border: none;
   padding: 0;
@@ -125,18 +127,21 @@ label {
   display: block;
   margin: 14px 0 8px;
   font-size: 13px;
-  color: rgba(234,240,255,.80);
+  color: rgba(234,240,255,.8);
 }
 
 input {
   width: 100%;
-  padding: 12px 12px;
+  padding: 12px;
+
   border-radius: 12px;
   border: 1px solid rgba(255,255,255,.14);
+
   background: rgba(10,12,22,.35);
   color: #eaf0ff;
+
   outline: none;
-  transition: border-color .2s, box-shadow .2s, transform .05s;
+  transition: border-color .2s, box-shadow .2s;
 }
 
 input::placeholder {
@@ -148,47 +153,44 @@ input:focus {
   box-shadow: 0 0 0 4px rgba(99,102,241,.20);
 }
 
-input:active {
-  transform: scale(0.998);
-}
-
-/* ====== BOTÃO (PADRONIZADO) ====== */
-/* Copiado fielmente do sign-up-login.component.css */
+/* ===== BOTÃO ===== */
 .btn-submit {
   width: 100%;
   margin-top: 16px;
   padding: 12px 14px;
-  
-  border: 0;
+
+  border: none;
   border-radius: 12px;
   cursor: pointer;
 
-  /* O gradiente exato da referência */
-  background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 55%, #22c55e 140%);
-  
-  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    #4f46e5 0%,
+    #3b82f6 55%,
+    #22c55e 140%
+  );
+
+  color: #fff;
   font-size: 15px;
-  font-weight: 800; /* Fonte mais grossa para destaque */
-  letter-spacing: .2px;
-  
-  transition: filter 0.2s; /* Adicionei para suavidade no hover */
+  font-weight: 800;
+
+  transition: filter .2s;
 }
 
 .btn-submit:hover {
-  filter: brightness(1.1); /* Efeito de brilho ao passar o mouse */
+  filter: brightness(1.1);
 }
 
-/* ====== FOOTER ====== */
+/* ===== FOOTER ===== */
 .login-footer {
   margin-top: 18px;
   text-align: center;
 }
 
 .login-footer a {
+  font-size: 13px;
   color: rgba(234,240,255,.6);
   text-decoration: none;
-  font-size: 13px;
-  transition: color 0.2s;
 }
 
 .login-footer a:hover {
