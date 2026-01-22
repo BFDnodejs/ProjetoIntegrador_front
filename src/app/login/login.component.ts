@@ -9,18 +9,21 @@ import { Router, RouterModule } from '@angular/router';
   standalone: true,
   imports: [FormsModule, CommonModule, RouterModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
 })
 export class LoginComponent {
   loginData = {
     email: '',
-    password: ''
+    password: '',
   };
 
   loading = false;
   errorMessage = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+  ) {}
 
   async onLogin(event: Event) {
     event.preventDefault();
